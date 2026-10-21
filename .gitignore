@@ -1,0 +1,32 @@
+# Node dependencies
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment files
+.env
+.env*.local
+!.env.example
+
+# Editor and OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Supabase local generated
+supabase/.branches
+supabase/.temp
+
+# Vitest coverage
+coverage/
+*.tsbuildinfo
+vite.config.d.ts
+vite.config.js
