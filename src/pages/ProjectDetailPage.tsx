@@ -49,12 +49,37 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId,
           user_id,
           role,
           joined_at,
-          profiles:user_id (id, display_name)
+          profiles (id, display_name)
         `)
         .eq('project_id', projectId);
 
-      if (memErr) throw memErr;
-      setMembers((memData as any) || []);
+      if (memErr) {
+        // Fallback: fetch members and profiles separately
+        const { data: simpleMem } = await supabase
+          .from('project_members')
+          .select('project_id, user_id, role, joined_at')
+          .eq('project_id', projectId);
+
+        if (simpleMem && simpleMem.length > 0) {
+          const userIds = simpleMem.map((m: any) => m.user_id);
+          const { data: profs } = await supabase
+            .from('profiles')
+            .select('id, display_name')
+            .in('id', userIds);
+
+          const profMap = new Map((profs || []).map((p: any) => [p.id, p]));
+          setMembers(
+            simpleMem.map((m: any) => ({
+              ...m,
+              profiles: profMap.get(m.user_id) || { id: m.user_id, display_name: 'Usuario' },
+            })) as any
+          );
+        } else {
+          setMembers([]);
+        }
+      } else {
+        setMembers((memData as any) || []);
+      }
     } catch (err: any) {
       console.error('Error cargando proyecto:', err);
       setErrorMsg(err.message || 'Error cargando datos del proyecto.');

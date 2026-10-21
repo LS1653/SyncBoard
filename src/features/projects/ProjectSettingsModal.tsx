@@ -43,12 +43,34 @@ export const ProjectSettingsModal: React.FC<ProjectSettingsModalProps> = ({
           user_id,
           role,
           joined_at,
-          profiles:user_id (id, display_name)
+          profiles (id, display_name)
         `)
         .eq('project_id', project.id);
 
       if (!error && data) {
         setMembers(data as any);
+      } else {
+        // Fallback: fetch separately
+        const { data: simpleMem } = await supabase
+          .from('project_members')
+          .select('project_id, user_id, role, joined_at')
+          .eq('project_id', project.id);
+
+        if (simpleMem && simpleMem.length > 0) {
+          const userIds = simpleMem.map((m: any) => m.user_id);
+          const { data: profs } = await supabase
+            .from('profiles')
+            .select('id, display_name')
+            .in('id', userIds);
+
+          const profMap = new Map((profs || []).map((p: any) => [p.id, p]));
+          setMembers(
+            simpleMem.map((m: any) => ({
+              ...m,
+              profiles: profMap.get(m.user_id) || { id: m.user_id, display_name: 'Usuario' },
+            })) as any
+          );
+        }
       }
     } catch (err) {
       console.error('Error cargando integrantes:', err);

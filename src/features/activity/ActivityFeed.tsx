@@ -20,7 +20,7 @@ export const ActivityFeed: React.FC<{ projectId: string }> = ({ projectId }) => 
           task_id,
           details,
           created_at,
-          profiles:actor_id (id, display_name)
+          profiles (id, display_name)
         `)
         .eq('project_id', projectId)
         .order('created_at', { ascending: false })
@@ -28,6 +28,31 @@ export const ActivityFeed: React.FC<{ projectId: string }> = ({ projectId }) => 
 
       if (!error && data) {
         setLogs(data as any);
+      } else {
+        const { data: simpleLogs } = await supabase
+          .from('activity_log')
+          .select('id, project_id, actor_id, action, task_id, details, created_at')
+          .eq('project_id', projectId)
+          .order('created_at', { ascending: false })
+          .limit(50);
+
+        if (simpleLogs && simpleLogs.length > 0) {
+          const actorIds = Array.from(new Set(simpleLogs.map((l: any) => l.actor_id).filter(Boolean)));
+          const { data: profs } = await supabase
+            .from('profiles')
+            .select('id, display_name')
+            .in('id', actorIds);
+
+          const profMap = new Map((profs || []).map((p: any) => [p.id, p]));
+          setLogs(
+            simpleLogs.map((l: any) => ({
+              ...l,
+              profiles: l.actor_id ? profMap.get(l.actor_id) || null : null,
+            })) as any
+          );
+        } else {
+          setLogs([]);
+        }
       }
     } catch (err) {
       console.error('Error cargando actividad:', err);
