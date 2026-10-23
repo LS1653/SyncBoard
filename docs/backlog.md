@@ -1,56 +1,94 @@
-# Backlog Maestro y Mapeo de Tareas — SyncBoard
+# Backlog Maestro y Asignación de Tareas — SyncBoard
 ## Sistemas Interactivos Distribuidos
 
-Este documento contiene el inventario formal de las **30 tareas pedagógicas** creadas en el repositorio GitHub [manolovillarreal/SyncBoard](https://github.com/manolovillarreal/SyncBoard), numeradas de `T01` a `T30`.
-
-Todas las tareas se encuentran actualmente en estado **`Pendiente`** y **sin asignar**, listas para ser distribuidas por el docente mediante Pull Requests y el GitHub Project.
+Este documento contiene el inventario formal de las **50 tareas pedagógicas** de SyncBoard ([manolovillarreal/SyncBoard](https://github.com/manolovillarreal/SyncBoard)), organizadas en GitHub Issues numerados del #1 al #50 (`T01` a `T50`), y la **asignación aleatoria de 3 tareas por estudiante** para los 15 estudiantes del curso.
 
 ---
 
-## Tabla Maestra de Seguimiento (T01 – T30)
+## 1. Asignación por Estudiante (3 Tareas por Estudiante)
 
-| ID | Título de la Tarea | Categoría | Dificultad | Enlace a GitHub Issue | Estado Inicial |
-|:---:|:---|:---:|:---:|:---|:---:|
-| **T01** | Botón para copiar identificador del proyecto al portapapeles | Ajuste | Baja | [#1](https://github.com/manolovillarreal/SyncBoard/issues/1) | Pendiente |
-| **T02** | Contador de caracteres restantes en título y descripción de tarea | Ajuste | Baja | [#2](https://github.com/manolovillarreal/SyncBoard/issues/2) | Pendiente |
-| **T03** | Indicador de días de retraso en tareas vencidas | Ajuste | Baja | [#3](https://github.com/manolovillarreal/SyncBoard/issues/3) | Pendiente |
-| **T04** | Filtro de búsqueda por texto en títulos de tareas del tablero | Mejora | Baja | [#4](https://github.com/manolovillarreal/SyncBoard/issues/4) | Pendiente |
-| **T05** | Estado vacío contextual cuando los filtros no devuelven tareas | Ajuste | Baja | [#5](https://github.com/manolovillarreal/SyncBoard/issues/5) | Pendiente |
-| **T06** | Formateador de tiempo relativo en historial de actividad | Ajuste | Baja | [#6](https://github.com/manolovillarreal/SyncBoard/issues/6) | Pendiente |
-| **T07** | Soporte de tecla Escape para cerrar modales de proyecto y tareas | Ajuste | Baja | [#7](https://github.com/manolovillarreal/SyncBoard/issues/7) | Pendiente |
-| **T08** | Selector de ordenamiento de tareas por fecha límite o prioridad | Mejora | Baja | [#8](https://github.com/manolovillarreal/SyncBoard/issues/8) | Pendiente |
-| **T09** | Badge informativo del rol del usuario actual en el proyecto | Ajuste | Baja | [#9](https://github.com/manolovillarreal/SyncBoard/issues/9) | Pendiente |
-| **T10** | Notificación toast temporal al mover tareas de columna | Ajuste | Media-baja | [#10](https://github.com/manolovillarreal/SyncBoard/issues/10) | Pendiente |
-| **T11** | Validación en cliente para evitar fechas límite en el pasado | Ajuste | Baja | [#11](https://github.com/manolovillarreal/SyncBoard/issues/11) | Pendiente |
-| **T12** | Prevención de doble clic y spinner de envío en formulario de proyectos | Ajuste | Baja | [#12](https://github.com/manolovillarreal/SyncBoard/issues/12) | Pendiente |
-| **T13** | Mensajes de error amigables ante fallos de conexión de red | Mejora | Baja | [#13](https://github.com/manolovillarreal/SyncBoard/issues/13) | Pendiente |
-| **T14** | Validación de longitud y complejidad mínima de contraseña | Ajuste | Baja | [#14](https://github.com/manolovillarreal/SyncBoard/issues/14) | Pendiente |
-| **T15** | Sanitización y recorte de espacios múltiples en nombres y títulos | Ajuste | Baja | [#15](https://github.com/manolovillarreal/SyncBoard/issues/15) | Pendiente |
-| **T16** | Modal de confirmación accesible al remover integrantes del equipo | Mejora | Baja | [#16](https://github.com/manolovillarreal/SyncBoard/issues/16) | Pendiente |
-| **T17** | Validación estricta de sintaxis de correo antes de invitar | Ajuste | Baja | [#17](https://github.com/manolovillarreal/SyncBoard/issues/17) | Pendiente |
-| **T18** | Botón de reintento ante error de carga en historial de actividad | Ajuste | Baja | [#18](https://github.com/manolovillarreal/SyncBoard/issues/18) | Pendiente |
-| **T19** | Indicador de estado de conexión Supabase Realtime en Navbar | Mejora | Media-baja | [#19](https://github.com/manolovillarreal/SyncBoard/issues/19) | Pendiente |
-| **T20** | Manejo de evento DELETE en canal Realtime de actividad | Mejora | Baja | [#20](https://github.com/manolovillarreal/SyncBoard/issues/20) | Pendiente |
-| **T21** | Resincronización automática de tareas al recuperar foco de ventana | Ajuste | Baja | [#21](https://github.com/manolovillarreal/SyncBoard/issues/21) | Pendiente |
-| **T22** | Resaltado visual transitorio de tarjeta actualizada vía Realtime | Mejora | Media-baja | [#22](https://github.com/manolovillarreal/SyncBoard/issues/22) | Pendiente |
-| **T23** | Filtro por tipo de acción en el historial de eventos | Funcionalidad | Media-baja | [#23](https://github.com/manolovillarreal/SyncBoard/issues/23) | Pendiente |
-| **T24** | Detección y notificación limpia de sesión expirada | Mejora | Baja | [#24](https://github.com/manolovillarreal/SyncBoard/issues/24) | Pendiente |
-| **T25** | Pruebas unitarias para formateadores de fechas y prioridades | Ajuste | Baja | [#25](https://github.com/manolovillarreal/SyncBoard/issues/25) | Pendiente |
-| **T26** | Pruebas unitarias exhaustivas de validadores de entrada | Ajuste | Baja | [#26](https://github.com/manolovillarreal/SyncBoard/issues/26) | Pendiente |
-| **T27** | Prueba de componente para la columna Kanban con Testing Library | Mejora | Media-baja | [#27](https://github.com/manolovillarreal/SyncBoard/issues/27) | Pendiente |
-| **T28** | Prueba de componente para validación del modal de tareas | Mejora | Media-baja | [#28](https://github.com/manolovillarreal/SyncBoard/issues/28) | Pendiente |
-| **T29** | Prueba de componente para la lista de proyectos y estado vacío | Mejora | Baja | [#29](https://github.com/manolovillarreal/SyncBoard/issues/29) | Pendiente |
-| **T30** | Verificación estricta de tipos TypeScript en modelos de datos | Ajuste | Baja | [#30](https://github.com/manolovillarreal/SyncBoard/issues/30) | Pendiente |
+| Estudiante | Tarea 1 | Tarea 2 | Tarea 3 |
+|:---|:---|:---|:---|
+| **Diego Molina Julian** | [T48: Prueba de componente para ReceivedInvitationsModal evaluando aceptar y rechazar](#48 "https://github.com/manolovillarreal/SyncBoard/issues/48") ([#48](https://github.com/manolovillarreal/SyncBoard/issues/48)) | [T07: Soporte de tecla Escape para cerrar modales de proyecto y tareas](#7 "https://github.com/manolovillarreal/SyncBoard/issues/7") ([#7](https://github.com/manolovillarreal/SyncBoard/issues/7)) | [T09: Badge informativo del rol del usuario actual en el proyecto](#9 "https://github.com/manolovillarreal/SyncBoard/issues/9") ([#9](https://github.com/manolovillarreal/SyncBoard/issues/9)) |
+| **Esteban Puerta Mejia** | [T15: Sanitización y recorte de espacios múltiples en nombres y títulos](#15 "https://github.com/manolovillarreal/SyncBoard/issues/15") ([#15](https://github.com/manolovillarreal/SyncBoard/issues/15)) | [T22: Resaltado visual transitorio de tarjeta actualizada vía Realtime](#22 "https://github.com/manolovillarreal/SyncBoard/issues/22") ([#22](https://github.com/manolovillarreal/SyncBoard/issues/22)) | [T24: Detección y notificación limpia de sesión expirada](#24 "https://github.com/manolovillarreal/SyncBoard/issues/24") ([#24](https://github.com/manolovillarreal/SyncBoard/issues/24)) |
+| **Felipe Gonzalez Tovar** | [T14: Validación de longitud y complejidad mínima de contraseña](#14 "https://github.com/manolovillarreal/SyncBoard/issues/14") ([#14](https://github.com/manolovillarreal/SyncBoard/issues/14)) | [T27: Prueba de componente para la columna Kanban con Testing Library](#27 "https://github.com/manolovillarreal/SyncBoard/issues/27") ([#27](https://github.com/manolovillarreal/SyncBoard/issues/27)) | [T19: Indicador de estado de conexión Supabase Realtime en Navbar](#19 "https://github.com/manolovillarreal/SyncBoard/issues/19") ([#19](https://github.com/manolovillarreal/SyncBoard/issues/19)) |
+| **Jakeline Avila Verbel** | [T03: Indicador de días de retraso en tareas vencidas](#3 "https://github.com/manolovillarreal/SyncBoard/issues/3") ([#3](https://github.com/manolovillarreal/SyncBoard/issues/3)) | [T31: Atajo de teclado Ctrl+Enter para guardar tareas en modal](#31 "https://github.com/manolovillarreal/SyncBoard/issues/31") ([#31](https://github.com/manolovillarreal/SyncBoard/issues/31)) | [T16: Modal de confirmación accesible al remover integrantes del equipo](#16 "https://github.com/manolovillarreal/SyncBoard/issues/16") ([#16](https://github.com/manolovillarreal/SyncBoard/issues/16)) |
+| **Jose Trujillo** | [T34: Filtro de proyectos por nombre en el buscador de Dashboard](#34 "https://github.com/manolovillarreal/SyncBoard/issues/34") ([#34](https://github.com/manolovillarreal/SyncBoard/issues/34)) | [T42: Alerta visual cuando una tarea no tiene responsable asignado](#42 "https://github.com/manolovillarreal/SyncBoard/issues/42") ([#42](https://github.com/manolovillarreal/SyncBoard/issues/42)) | [T32: Avatar con iniciales y color determinista para integrantes](#32 "https://github.com/manolovillarreal/SyncBoard/issues/32") ([#32](https://github.com/manolovillarreal/SyncBoard/issues/32)) |
+| **Juan Sebastian Gonzalez Arcila** | [T47: Tooltip explicativo en los badges de prioridad con guía de uso](#47 "https://github.com/manolovillarreal/SyncBoard/issues/47") ([#47](https://github.com/manolovillarreal/SyncBoard/issues/47)) | [T35: Confirmación visual al copiar correo de invitación en modal](#35 "https://github.com/manolovillarreal/SyncBoard/issues/35") ([#35](https://github.com/manolovillarreal/SyncBoard/issues/35)) | [T39: Exportar tareas del proyecto a formato CSV descargable](#39 "https://github.com/manolovillarreal/SyncBoard/issues/39") ([#39](https://github.com/manolovillarreal/SyncBoard/issues/39)) |
+| **Juan Sebastian Lopez Martinez** | [T30: Verificación estricta de tipos TypeScript en modelos de datos](#30 "https://github.com/manolovillarreal/SyncBoard/issues/30") ([#30](https://github.com/manolovillarreal/SyncBoard/issues/30)) | [T38: Botón para alternar visibilidad de contraseña en AuthPage](#38 "https://github.com/manolovillarreal/SyncBoard/issues/38") ([#38](https://github.com/manolovillarreal/SyncBoard/issues/38)) | [T50: Enlace al repositorio GitHub y documentación en el menú de usuario](#50 "https://github.com/manolovillarreal/SyncBoard/issues/50") ([#50](https://github.com/manolovillarreal/SyncBoard/issues/50)) |
+| **Luis Fernando Parra Castilla** | [T44: Contador y filtro rápido de Mis Tareas en KanbanBoard](#44 "https://github.com/manolovillarreal/SyncBoard/issues/44") ([#44](https://github.com/manolovillarreal/SyncBoard/issues/44)) | [T04: Filtro de búsqueda por texto en títulos de tareas del tablero](#4 "https://github.com/manolovillarreal/SyncBoard/issues/4") ([#4](https://github.com/manolovillarreal/SyncBoard/issues/4)) | [T36: Resumen de métricas de tareas por columna en tarjetas de Dashboard](#36 "https://github.com/manolovillarreal/SyncBoard/issues/36") ([#36](https://github.com/manolovillarreal/SyncBoard/issues/36)) |
+| **Juan Fernando Melo Areiza** | [T43: Limpieza automática de formulario y foco en primer campo al abrir modales](#43 "https://github.com/manolovillarreal/SyncBoard/issues/43") ([#43](https://github.com/manolovillarreal/SyncBoard/issues/43)) | [T45: Mensaje informativo en ReceivedInvitationsModal al aceptar la última invitación](#45 "https://github.com/manolovillarreal/SyncBoard/issues/45") ([#45](https://github.com/manolovillarreal/SyncBoard/issues/45)) | [T28: Prueba de componente para validación del modal de tareas](#28 "https://github.com/manolovillarreal/SyncBoard/issues/28") ([#28](https://github.com/manolovillarreal/SyncBoard/issues/28)) |
+| **Luisa Fernanda Garcia Gallego** | [T08: Selector de ordenamiento de tareas por fecha límite o prioridad](#8 "https://github.com/manolovillarreal/SyncBoard/issues/8") ([#8](https://github.com/manolovillarreal/SyncBoard/issues/8)) | [T37: Deshabilitar botón de asignación si no hay otros integrantes](#37 "https://github.com/manolovillarreal/SyncBoard/issues/37") ([#37](https://github.com/manolovillarreal/SyncBoard/issues/37)) | [T06: Formateador de tiempo relativo en historial de actividad](#6 "https://github.com/manolovillarreal/SyncBoard/issues/6") ([#6](https://github.com/manolovillarreal/SyncBoard/issues/6)) |
+| **Santiago Velasco Mosquero** | [T26: Pruebas unitarias exhaustivas de validadores de entrada](#26 "https://github.com/manolovillarreal/SyncBoard/issues/26") ([#26](https://github.com/manolovillarreal/SyncBoard/issues/26)) | [T29: Prueba de componente para la lista de proyectos y estado vacío](#29 "https://github.com/manolovillarreal/SyncBoard/issues/29") ([#29](https://github.com/manolovillarreal/SyncBoard/issues/29)) | [T49: Prueba de componente para ProjectSettingsModal evaluando edición](#49 "https://github.com/manolovillarreal/SyncBoard/issues/49") ([#49](https://github.com/manolovillarreal/SyncBoard/issues/49)) |
+| **Sebastian Pedroza Gallardo** | [T25: Pruebas unitarias para formateadores de fechas y prioridades](#25 "https://github.com/manolovillarreal/SyncBoard/issues/25") ([#25](https://github.com/manolovillarreal/SyncBoard/issues/25)) | [T23: Filtro por tipo de acción en el historial de eventos](#23 "https://github.com/manolovillarreal/SyncBoard/issues/23") ([#23](https://github.com/manolovillarreal/SyncBoard/issues/23)) | [T18: Botón de reintento ante error de carga en historial de actividad](#18 "https://github.com/manolovillarreal/SyncBoard/issues/18") ([#18](https://github.com/manolovillarreal/SyncBoard/issues/18)) |
+| **Sergio Nicolas Fonseca Nino** | [T17: Validación estricta de sintaxis de correo antes de invitar](#17 "https://github.com/manolovillarreal/SyncBoard/issues/17") ([#17](https://github.com/manolovillarreal/SyncBoard/issues/17)) | [T05: Estado vacío contextual cuando los filtros no devuelven tareas](#5 "https://github.com/manolovillarreal/SyncBoard/issues/5") ([#5](https://github.com/manolovillarreal/SyncBoard/issues/5)) | [T10: Notificación toast temporal al mover tareas de columna](#10 "https://github.com/manolovillarreal/SyncBoard/issues/10") ([#10](https://github.com/manolovillarreal/SyncBoard/issues/10)) |
+| **Simon Burgos** | [T46: Detección de reconexión a internet con recarga automática de datos](#46 "https://github.com/manolovillarreal/SyncBoard/issues/46") ([#46](https://github.com/manolovillarreal/SyncBoard/issues/46)) | [T12: Prevención de doble clic y spinner de envío en formulario de proyectos](#12 "https://github.com/manolovillarreal/SyncBoard/issues/12") ([#12](https://github.com/manolovillarreal/SyncBoard/issues/12)) | [T11: Validación en cliente para evitar fechas límite en el pasado](#11 "https://github.com/manolovillarreal/SyncBoard/issues/11") ([#11](https://github.com/manolovillarreal/SyncBoard/issues/11)) |
+| **Thomas Hoyos Carmona** | [T21: Resincronización automática de tareas al recuperar foco de ventana](#21 "https://github.com/manolovillarreal/SyncBoard/issues/21") ([#21](https://github.com/manolovillarreal/SyncBoard/issues/21)) | [T20: Manejo de evento DELETE en canal Realtime de actividad](#20 "https://github.com/manolovillarreal/SyncBoard/issues/20") ([#20](https://github.com/manolovillarreal/SyncBoard/issues/20)) | [T33: Indicador de progreso del proyecto (% de tareas completadas)](#33 "https://github.com/manolovillarreal/SyncBoard/issues/33") ([#33](https://github.com/manolovillarreal/SyncBoard/issues/33)) |
 
 ---
 
-## Estructura de Cada Tarea
+## 2. Tareas en Reserva (Sin Asignar)
 
-Cada Issue en GitHub incluye:
-1. **Identificador y título descriptivo:** `[Txx] ...`
-2. **Descripción breve del cambio esperado:** Problema y alcance.
-3. **Clasificación:** Categoría (`Ajuste`, `Mejora` o `Funcionalidad`) y Dificultad (`Baja` o `Media-baja`).
-4. **Criterios de Aceptación:** Entre 2 y 5 condiciones objetivas y verificables.
-5. **Pruebas Esperadas:** Pruebas unitarias o de componentes requeridas.
-6. **Objetivo de Aprendizaje:** Concepto pedagógico de *Sistemas Interactivos Distribuidos*.
-7. **Dependencias:** Independientes siempre que sea posible.
+Las siguientes 5 tareas quedan como reserva para ampliaciones, recuperación o trabajo adicional:
+- **[T41] Atajo de teclado N en KanbanBoard para crear nueva tarea** ([Issue #41](https://github.com/manolovillarreal/SyncBoard/issues/41)) — *Mejora | Baja*
+- **[T02] Contador de caracteres restantes en título y descripción de tarea** ([Issue #2](https://github.com/manolovillarreal/SyncBoard/issues/2)) — *Ajuste | Baja*
+- **[T01] Botón para copiar identificador del proyecto al portapapeles** ([Issue #1](https://github.com/manolovillarreal/SyncBoard/issues/1)) — *Ajuste | Baja*
+- **[T13] Mensajes de error amigables ante fallos de conexión de red** ([Issue #13](https://github.com/manolovillarreal/SyncBoard/issues/13)) — *Mejora | Baja*
+- **[T40] Indicador de tiempo restante de expiración en invitaciones recibidas** ([Issue #40](https://github.com/manolovillarreal/SyncBoard/issues/40)) — *Ajuste | Baja*
+
+---
+
+## 3. Tabla General de las 50 Tareas (T01 – T50)
+
+| ID | Título de la Tarea | Categoría | Dificultad | Enlace a GitHub Issue | Estudiante Asignado |
+|:---:|:---|:---:|:---:|:---|:---|
+| **T01** | Botón para copiar identificador del proyecto al portapapeles | Ajuste | Baja | [Issue #1](https://github.com/manolovillarreal/SyncBoard/issues/1) | *Reserva (Sin asignar)* |
+| **T02** | Contador de caracteres restantes en título y descripción de tarea | Ajuste | Baja | [Issue #2](https://github.com/manolovillarreal/SyncBoard/issues/2) | *Reserva (Sin asignar)* |
+| **T03** | Indicador de días de retraso en tareas vencidas | Ajuste | Baja | [Issue #3](https://github.com/manolovillarreal/SyncBoard/issues/3) | Jakeline Avila Verbel |
+| **T04** | Filtro de búsqueda por texto en títulos de tareas del tablero | Mejora | Baja | [Issue #4](https://github.com/manolovillarreal/SyncBoard/issues/4) | Luis Fernando Parra Castilla |
+| **T05** | Estado vacío contextual cuando los filtros no devuelven tareas | Ajuste | Baja | [Issue #5](https://github.com/manolovillarreal/SyncBoard/issues/5) | Sergio Nicolas Fonseca Nino |
+| **T06** | Formateador de tiempo relativo en historial de actividad | Ajuste | Baja | [Issue #6](https://github.com/manolovillarreal/SyncBoard/issues/6) | Luisa Fernanda Garcia Gallego |
+| **T07** | Soporte de tecla Escape para cerrar modales de proyecto y tareas | Ajuste | Baja | [Issue #7](https://github.com/manolovillarreal/SyncBoard/issues/7) | Diego Molina Julian |
+| **T08** | Selector de ordenamiento de tareas por fecha límite o prioridad | Mejora | Baja | [Issue #8](https://github.com/manolovillarreal/SyncBoard/issues/8) | Luisa Fernanda Garcia Gallego |
+| **T09** | Badge informativo del rol del usuario actual en el proyecto | Ajuste | Baja | [Issue #9](https://github.com/manolovillarreal/SyncBoard/issues/9) | Diego Molina Julian |
+| **T10** | Notificación toast temporal al mover tareas de columna | Ajuste | Media-baja | [Issue #10](https://github.com/manolovillarreal/SyncBoard/issues/10) | Sergio Nicolas Fonseca Nino |
+| **T11** | Validación en cliente para evitar fechas límite en el pasado | Ajuste | Baja | [Issue #11](https://github.com/manolovillarreal/SyncBoard/issues/11) | Simon Burgos |
+| **T12** | Prevención de doble clic y spinner de envío en formulario de proyectos | Ajuste | Baja | [Issue #12](https://github.com/manolovillarreal/SyncBoard/issues/12) | Simon Burgos |
+| **T13** | Mensajes de error amigables ante fallos de conexión de red | Mejora | Baja | [Issue #13](https://github.com/manolovillarreal/SyncBoard/issues/13) | *Reserva (Sin asignar)* |
+| **T14** | Validación de longitud y complejidad mínima de contraseña | Ajuste | Baja | [Issue #14](https://github.com/manolovillarreal/SyncBoard/issues/14) | Felipe Gonzalez Tovar |
+| **T15** | Sanitización y recorte de espacios múltiples en nombres y títulos | Ajuste | Baja | [Issue #15](https://github.com/manolovillarreal/SyncBoard/issues/15) | Esteban Puerta Mejia |
+| **T16** | Modal de confirmación accesible al remover integrantes del equipo | Mejora | Baja | [Issue #16](https://github.com/manolovillarreal/SyncBoard/issues/16) | Jakeline Avila Verbel |
+| **T17** | Validación estricta de sintaxis de correo antes de invitar | Ajuste | Baja | [Issue #17](https://github.com/manolovillarreal/SyncBoard/issues/17) | Sergio Nicolas Fonseca Nino |
+| **T18** | Botón de reintento ante error de carga en historial de actividad | Ajuste | Baja | [Issue #18](https://github.com/manolovillarreal/SyncBoard/issues/18) | Sebastian Pedroza Gallardo |
+| **T19** | Indicador de estado de conexión Supabase Realtime en Navbar | Mejora | Media-baja | [Issue #19](https://github.com/manolovillarreal/SyncBoard/issues/19) | Felipe Gonzalez Tovar |
+| **T20** | Manejo de evento DELETE en canal Realtime de actividad | Mejora | Baja | [Issue #20](https://github.com/manolovillarreal/SyncBoard/issues/20) | Thomas Hoyos Carmona |
+| **T21** | Resincronización automática de tareas al recuperar foco de ventana | Ajuste | Baja | [Issue #21](https://github.com/manolovillarreal/SyncBoard/issues/21) | Thomas Hoyos Carmona |
+| **T22** | Resaltado visual transitorio de tarjeta actualizada vía Realtime | Mejora | Media-baja | [Issue #22](https://github.com/manolovillarreal/SyncBoard/issues/22) | Esteban Puerta Mejia |
+| **T23** | Filtro por tipo de acción en el historial de eventos | Funcionalidad | Media-baja | [Issue #23](https://github.com/manolovillarreal/SyncBoard/issues/23) | Sebastian Pedroza Gallardo |
+| **T24** | Detección y notificación limpia de sesión expirada | Mejora | Baja | [Issue #24](https://github.com/manolovillarreal/SyncBoard/issues/24) | Esteban Puerta Mejia |
+| **T25** | Pruebas unitarias para formateadores de fechas y prioridades | Ajuste | Baja | [Issue #25](https://github.com/manolovillarreal/SyncBoard/issues/25) | Sebastian Pedroza Gallardo |
+| **T26** | Pruebas unitarias exhaustivas de validadores de entrada | Ajuste | Baja | [Issue #26](https://github.com/manolovillarreal/SyncBoard/issues/26) | Santiago Velasco Mosquero |
+| **T27** | Prueba de componente para la columna Kanban con Testing Library | Mejora | Media-baja | [Issue #27](https://github.com/manolovillarreal/SyncBoard/issues/27) | Felipe Gonzalez Tovar |
+| **T28** | Prueba de componente para validación del modal de tareas | Mejora | Media-baja | [Issue #28](https://github.com/manolovillarreal/SyncBoard/issues/28) | Juan Fernando Melo Areiza |
+| **T29** | Prueba de componente para la lista de proyectos y estado vacío | Mejora | Baja | [Issue #29](https://github.com/manolovillarreal/SyncBoard/issues/29) | Santiago Velasco Mosquero |
+| **T30** | Verificación estricta de tipos TypeScript en modelos de datos | Ajuste | Baja | [Issue #30](https://github.com/manolovillarreal/SyncBoard/issues/30) | Juan Sebastian Lopez Martinez |
+| **T31** | Atajo de teclado Ctrl+Enter para guardar tareas en modal | Ajuste | Baja | [Issue #31](https://github.com/manolovillarreal/SyncBoard/issues/31) | Jakeline Avila Verbel |
+| **T32** | Avatar con iniciales y color determinista para integrantes | Ajuste | Baja | [Issue #32](https://github.com/manolovillarreal/SyncBoard/issues/32) | Jose Trujillo |
+| **T33** | Indicador de progreso del proyecto (% de tareas completadas) | Mejora | Baja | [Issue #33](https://github.com/manolovillarreal/SyncBoard/issues/33) | Thomas Hoyos Carmona |
+| **T34** | Filtro de proyectos por nombre en el buscador de Dashboard | Ajuste | Baja | [Issue #34](https://github.com/manolovillarreal/SyncBoard/issues/34) | Jose Trujillo |
+| **T35** | Confirmación visual al copiar correo de invitación en modal | Ajuste | Baja | [Issue #35](https://github.com/manolovillarreal/SyncBoard/issues/35) | Juan Sebastian Gonzalez Arcila |
+| **T36** | Resumen de métricas de tareas por columna en tarjetas de Dashboard | Mejora | Baja | [Issue #36](https://github.com/manolovillarreal/SyncBoard/issues/36) | Luis Fernando Parra Castilla |
+| **T37** | Deshabilitar botón de asignación si no hay otros integrantes | Ajuste | Baja | [Issue #37](https://github.com/manolovillarreal/SyncBoard/issues/37) | Luisa Fernanda Garcia Gallego |
+| **T38** | Botón para alternar visibilidad de contraseña en AuthPage | Ajuste | Baja | [Issue #38](https://github.com/manolovillarreal/SyncBoard/issues/38) | Juan Sebastian Lopez Martinez |
+| **T39** | Exportar tareas del proyecto a formato CSV descargable | Mejora | Media-baja | [Issue #39](https://github.com/manolovillarreal/SyncBoard/issues/39) | Juan Sebastian Gonzalez Arcila |
+| **T40** | Indicador de tiempo restante de expiración en invitaciones recibidas | Ajuste | Baja | [Issue #40](https://github.com/manolovillarreal/SyncBoard/issues/40) | *Reserva (Sin asignar)* |
+| **T41** | Atajo de teclado N en KanbanBoard para crear nueva tarea | Mejora | Baja | [Issue #41](https://github.com/manolovillarreal/SyncBoard/issues/41) | *Reserva (Sin asignar)* |
+| **T42** | Alerta visual cuando una tarea no tiene responsable asignado | Ajuste | Baja | [Issue #42](https://github.com/manolovillarreal/SyncBoard/issues/42) | Jose Trujillo |
+| **T43** | Limpieza automática de formulario y foco en primer campo al abrir modales | Ajuste | Baja | [Issue #43](https://github.com/manolovillarreal/SyncBoard/issues/43) | Juan Fernando Melo Areiza |
+| **T44** | Contador y filtro rápido de Mis Tareas en KanbanBoard | Mejora | Baja | [Issue #44](https://github.com/manolovillarreal/SyncBoard/issues/44) | Luis Fernando Parra Castilla |
+| **T45** | Mensaje informativo en ReceivedInvitationsModal al aceptar la última invitación | Ajuste | Baja | [Issue #45](https://github.com/manolovillarreal/SyncBoard/issues/45) | Juan Fernando Melo Areiza |
+| **T46** | Detección de reconexión a internet con recarga automática de datos | Mejora | Media-baja | [Issue #46](https://github.com/manolovillarreal/SyncBoard/issues/46) | Simon Burgos |
+| **T47** | Tooltip explicativo en los badges de prioridad con guía de uso | Ajuste | Baja | [Issue #47](https://github.com/manolovillarreal/SyncBoard/issues/47) | Juan Sebastian Gonzalez Arcila |
+| **T48** | Prueba de componente para ReceivedInvitationsModal evaluando aceptar y rechazar | Mejora | Media-baja | [Issue #48](https://github.com/manolovillarreal/SyncBoard/issues/48) | Diego Molina Julian |
+| **T49** | Prueba de componente para ProjectSettingsModal evaluando edición | Mejora | Media-baja | [Issue #49](https://github.com/manolovillarreal/SyncBoard/issues/49) | Santiago Velasco Mosquero |
+| **T50** | Enlace al repositorio GitHub y documentación en el menú de usuario | Ajuste | Baja | [Issue #50](https://github.com/manolovillarreal/SyncBoard/issues/50) | Juan Sebastian Lopez Martinez |
