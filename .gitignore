@@ -30,3 +30,8 @@ coverage/
 *.tsbuildinfo
 vite.config.d.ts
 vite.config.js
+
+# Vercel
+.vercel
+
+.vercel
