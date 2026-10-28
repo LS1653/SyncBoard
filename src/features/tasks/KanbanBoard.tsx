@@ -136,11 +136,39 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({ projectId, members }) 
     }
   };
 
-  const handleOpenAddTask = (status: TaskStatus = 'pending') => {
+  const handleOpenAddTask = useCallback((status: TaskStatus = 'pending') => {
     setEditingTask(null);
     setModalDefaultStatus(status);
     setModalOpen(true);
-  };
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key.toLowerCase() !== 'n') return;
+
+      const target = e.target as HTMLElement | null;
+      const activeEl = document.activeElement as HTMLElement | null;
+      const interactiveTags = ['INPUT', 'TEXTAREA', 'SELECT'];
+
+      if (
+        (target && (interactiveTags.includes(target.tagName) || target.isContentEditable)) ||
+        (activeEl && (interactiveTags.includes(activeEl.tagName) || activeEl.isContentEditable))
+      ) {
+        return;
+      }
+
+      if (!modalOpen) {
+        e.preventDefault();
+        handleOpenAddTask('pending');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [modalOpen, handleOpenAddTask]);
 
   const handleOpenEditTask = (task: Task) => {
     setEditingTask(task);

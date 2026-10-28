@@ -30,7 +30,7 @@ Este documento contiene el inventario formal de las **50 tareas pedagógicas** d
 ## 2. Tareas en Reserva (Sin Asignar)
 
 Las siguientes 5 tareas quedan como reserva para ampliaciones, recuperación o trabajo adicional:
-- **[T41] Atajo de teclado N en KanbanBoard para crear nueva tarea** ([Issue #41](https://github.com/manolovillarreal/SyncBoard/issues/41)) — *Mejora | Baja*
+- **[T41] Atajo de teclado N en KanbanBoard para crear nueva tarea** ([Issue #41](https://github.com/manolovillarreal/SyncBoard/issues/41)) — *Mejora | Baja* — **Estado: Completada**
 - **[T02] Contador de caracteres restantes en título y descripción de tarea** ([Issue #2](https://github.com/manolovillarreal/SyncBoard/issues/2)) — *Ajuste | Baja*
 - **[T01] Botón para copiar identificador del proyecto al portapapeles** ([Issue #1](https://github.com/manolovillarreal/SyncBoard/issues/1)) — *Ajuste | Baja*
 - **[T13] Mensajes de error amigables ante fallos de conexión de red** ([Issue #13](https://github.com/manolovillarreal/SyncBoard/issues/13)) — *Mejora | Baja*
@@ -82,7 +82,7 @@ Las siguientes 5 tareas quedan como reserva para ampliaciones, recuperación o t
 | **T38** | Botón para alternar visibilidad de contraseña en AuthPage | Ajuste | Baja | [Issue #38](https://github.com/manolovillarreal/SyncBoard/issues/38) | Juan Sebastian Lopez Martinez |
 | **T39** | Exportar tareas del proyecto a formato CSV descargable | Mejora | Media-baja | [Issue #39](https://github.com/manolovillarreal/SyncBoard/issues/39) | Juan Sebastian Gonzalez Arcila |
 | **T40** | Indicador de tiempo restante de expiración en invitaciones recibidas | Ajuste | Baja | [Issue #40](https://github.com/manolovillarreal/SyncBoard/issues/40) | *Reserva (Sin asignar)* |
-| **T41** | Atajo de teclado N en KanbanBoard para crear nueva tarea | Mejora | Baja | [Issue #41](https://github.com/manolovillarreal/SyncBoard/issues/41) | *Reserva (Sin asignar)* |
+| **T41** | Atajo de teclado N en KanbanBoard para crear nueva tarea | Mejora | Baja | [Issue #41](https://github.com/manolovillarreal/SyncBoard/issues/41) | *Completada (PR #41)* |
 | **T42** | Alerta visual cuando una tarea no tiene responsable asignado | Ajuste | Baja | [Issue #42](https://github.com/manolovillarreal/SyncBoard/issues/42) | Jose Trujillo |
 | **T43** | Limpieza automática de formulario y foco en primer campo al abrir modales | Ajuste | Baja | [Issue #43](https://github.com/manolovillarreal/SyncBoard/issues/43) | Juan Fernando Melo Areiza |
 | **T44** | Contador y filtro rápido de Mis Tareas en KanbanBoard | Mejora | Baja | [Issue #44](https://github.com/manolovillarreal/SyncBoard/issues/44) | Luis Fernando Parra Castilla |
