@@ -50,4 +50,10 @@ export const validateTaskInput = (
   }
 
   return { valid: true };
+
+  
+};
+
+export const sanitizeTitle = (text: string): string => {
+    return text.replace(/\s+/g, ' ').trim();
 };

@@ -3,6 +3,7 @@ import { supabase } from '../../lib/supabase';
 import { Project, ProjectMember } from '../../types/database.types';
 import { useAuth } from '../auth/AuthContext';
 import { X, Settings, Users, Trash2, AlertTriangle, UserMinus } from 'lucide-react';
+import { sanitizeTitle } from '../../lib/validators';
 
 interface ProjectSettingsModalProps {
   project: Project;
@@ -93,7 +94,8 @@ export const ProjectSettingsModal: React.FC<ProjectSettingsModalProps> = ({
 
   const handleSaveDetails = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim()) return;
+    const sanitizedName = sanitizeTitle(name);
+    if (!sanitizedName) return;
 
     setSaving(true);
     setErrorMsg(null);
@@ -101,14 +103,14 @@ export const ProjectSettingsModal: React.FC<ProjectSettingsModalProps> = ({
       const { error } = await supabase
         .from('projects')
         .update({
-          name: name.trim(),
+          name: sanitizedName,
           description: description.trim() || null,
         })
         .eq('id', project.id);
 
       if (error) throw error;
 
-      onProjectUpdated({ name: name.trim(), description: description.trim() || null });
+      onProjectUpdated({ name: sanitizedName, description: description.trim() || null });
       onClose();
     } catch (err: any) {
       setErrorMsg(err.message || 'Error al actualizar el proyecto.');

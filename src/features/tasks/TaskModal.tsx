@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
 import { Task, TaskPriority, TaskStatus, ProjectMember } from '../../types/database.types';
-import { validateTaskInput } from '../../lib/validators';
+import { validateTaskInput, sanitizeTitle } from '../../lib/validators';
 import { useAuth } from '../auth/AuthContext';
 import { X, CheckSquare, AlertCircle } from 'lucide-react';
 
@@ -61,7 +61,8 @@ export const TaskModal: React.FC<TaskModalProps> = ({
     e.preventDefault();
     setErrorMsg(null);
 
-    const validation = validateTaskInput(title, status, priority);
+    const sanitizedTitle = sanitizeTitle(title);
+    const validation = validateTaskInput(sanitizedTitle, status, priority);
     if (!validation.valid) {
       setErrorMsg(validation.error || 'Datos de tarea inválidos.');
       return;
@@ -74,7 +75,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
         const { error } = await supabase
           .from('tasks')
           .update({
-            title: title.trim(),
+            title: sanitizedTitle,
             description: description.trim() || null,
             status,
             priority,
@@ -91,7 +92,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
           actor_id: user?.id,
           action: 'task_updated',
           task_id: taskToEdit.id,
-          details: { title: title.trim(), status, priority },
+          details: { title: sanitizedTitle, status, priority },
         });
       } else {
         // Create task
@@ -99,7 +100,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
           .from('tasks')
           .insert({
             project_id: projectId,
-            title: title.trim(),
+            title: sanitizedTitle,
             description: description.trim() || null,
             status,
             priority,
@@ -118,7 +119,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
           actor_id: user?.id,
           action: 'task_created',
           task_id: newTask.id,
-          details: { title: title.trim(), priority, status },
+          details: { title: sanitizedTitle, priority, status },
         });
       }
 

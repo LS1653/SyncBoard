@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { supabase } from '../../lib/supabase';
-import { validateProjectInput } from '../../lib/validators';
+import { validateProjectInput, sanitizeTitle } from '../../lib/validators';
 import { X, FolderPlus, AlertCircle } from 'lucide-react';
 
 interface CreateProjectModalProps {
@@ -25,7 +25,8 @@ export const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
     e.preventDefault();
     setErrorMsg(null);
 
-    const validation = validateProjectInput(name);
+    const sanitizedName = sanitizeTitle(name);
+    const validation = validateProjectInput(sanitizedName);
     if (!validation.valid) {
       setErrorMsg(validation.error || 'Nombre inválido.');
       return;
@@ -35,7 +36,7 @@ export const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
     try {
       // Call atomic RPC
       const { data: newProjectId, error } = await supabase.rpc('create_project_with_owner', {
-        p_name: name.trim(),
+        p_name: sanitizedName,
         p_description: description.trim() || null,
       });
 
