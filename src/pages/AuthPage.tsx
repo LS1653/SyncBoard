@@ -4,7 +4,7 @@ import { isValidEmail } from '../lib/validators';
 import { LayoutDashboard, Lock, Mail, User, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export const AuthPage: React.FC = () => {
-  const { signIn, signUp, resetPassword } = useAuth();
+  const { signIn, signUp, resetPassword, sessionExpiredMsg, clearSessionMsg } = useAuth();
   const [tab, setTab] = useState<'login' | 'register' | 'recovery'>('login');
 
   const [email, setEmail] = useState('');
@@ -19,6 +19,7 @@ export const AuthPage: React.FC = () => {
   const clearMessages = () => {
     setErrorMessage(null);
     setSuccessMessage(null);
+    if (clearSessionMsg) clearSessionMsg();
   };
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -159,6 +160,13 @@ export const AuthPage: React.FC = () => {
           </div>
 
           {/* Alertas */}
+          {sessionExpiredMsg && (
+            <div className="mb-4 p-3 bg-amber-50 border border-amber-200 text-amber-800 text-sm rounded-lg flex items-center gap-2">
+              <AlertCircle className="w-5 h-5 flex-shrink-0" />
+              <span>{sessionExpiredMsg}</span>
+            </div>
+          )}
+
           {errorMessage && (
             <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg flex items-center gap-2">
               <AlertCircle className="w-5 h-5 flex-shrink-0" />

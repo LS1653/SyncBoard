@@ -8,6 +8,8 @@ interface AuthContextType {
   profile: Profile | null;
   session: Session | null;
   loading: boolean;
+  sessionExpiredMsg: string | null;
+  clearSessionMsg: () => void;
   signIn: (email: string, password: string) => Promise<{ error: AuthError | null }>;
   signUp: (email: string, password: string, displayName: string) => Promise<{ error: AuthError | null }>;
   signOut: () => Promise<void>;
@@ -23,6 +25,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [sessionExpiredMsg, setSessionExpiredMsg] = useState<string | null>(null);
+
+  const clearSessionMsg = () => setSessionExpiredMsg(null);
 
   const fetchProfile = async (userId: string) => {
     try {
@@ -59,7 +64,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
 
     // Listen for auth state changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') {
+        if (!session) {
+          setSessionExpiredMsg('Tu sesión ha caducado. Por favor ingresa de nuevo.');
+        }
+      }
+
+      // Si el usuario hace login manual exitoso, limpiamos el mensaje
+      if (event === 'SIGNED_IN') {
+        setSessionExpiredMsg(null);
+      }
+
       setSession(session);
       setUser(session?.user ?? null);
       if (session?.user) {
@@ -157,6 +173,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         profile,
         session,
         loading,
+        sessionExpiredMsg,
+        clearSessionMsg,
         signIn,
         signUp,
         signOut,
