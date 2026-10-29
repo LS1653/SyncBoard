@@ -13,6 +13,7 @@ interface KanbanColumnProps {
   onDeleteTask: (taskId: string) => void;
   onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
   colorScheme: 'slate' | 'amber' | 'emerald';
+  recentlyUpdatedTaskId: string | null; // <--- Agrega esto
 }
 
 export const KanbanColumn: React.FC<KanbanColumnProps> = ({
@@ -25,6 +26,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
   onDeleteTask,
   onStatusChange,
   colorScheme,
+  recentlyUpdatedTaskId,
 }) => {
   const memberMap = new Map<string, string>();
   members.forEach((m) => {
@@ -97,6 +99,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
               onDelete={onDeleteTask}
               onStatusChange={onStatusChange}
               assigneeName={task.assignee_id ? memberMap.get(task.assignee_id) : undefined}
+              isRecentlyUpdated={recentlyUpdatedTaskId === task.id}
             />
           ))
         )}

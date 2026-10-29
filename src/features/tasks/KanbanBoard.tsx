@@ -25,6 +25,7 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({ projectId, members }) 
   const [modalOpen, setModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
   const [modalDefaultStatus, setModalDefaultStatus] = useState<TaskStatus>('pending');
+  const [recentlyUpdatedTaskId, setRecentlyUpdatedTaskId] = useState<string | null>(null);
 
   const fetchTasks = useCallback(async () => {
     try {
@@ -66,6 +67,17 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({ projectId, members }) 
             setTasks((prev) =>
               prev.map((t) => (t.id === payload.new.id ? (payload.new as Task) : t))
             );
+            
+            // Activar el resaltado visual
+            setRecentlyUpdatedTaskId(payload.new.id);
+            
+            // Limpiar el resaltado después de 2 segundos (2000 ms)
+            setTimeout(() => {
+              setRecentlyUpdatedTaskId((current) => 
+                current === payload.new.id ? null : current
+              );
+            }, 2000);
+            
           } else if (payload.eventType === 'DELETE') {
             setTasks((prev) => prev.filter((t) => t.id !== (payload.old as any).id));
           }
@@ -291,6 +303,7 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({ projectId, members }) 
             onDeleteTask={handleDeleteTask}
             onStatusChange={handleStatusChange}
             colorScheme="slate"
+            recentlyUpdatedTaskId={recentlyUpdatedTaskId}
           />
 
           <KanbanColumn
@@ -303,6 +316,7 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({ projectId, members }) 
             onDeleteTask={handleDeleteTask}
             onStatusChange={handleStatusChange}
             colorScheme="amber"
+            recentlyUpdatedTaskId={recentlyUpdatedTaskId}
           />
 
           <KanbanColumn
@@ -315,6 +329,7 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({ projectId, members }) 
             onDeleteTask={handleDeleteTask}
             onStatusChange={handleStatusChange}
             colorScheme="emerald"
+            recentlyUpdatedTaskId={recentlyUpdatedTaskId}
           />
         </div>
       )}

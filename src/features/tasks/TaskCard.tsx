@@ -9,6 +9,7 @@ interface TaskCardProps {
   onDelete: (taskId: string) => void;
   onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
   assigneeName?: string;
+  isRecentlyUpdated?: boolean;
 }
 
 export const TaskCard: React.FC<TaskCardProps> = ({
@@ -17,6 +18,7 @@ export const TaskCard: React.FC<TaskCardProps> = ({
   onDelete,
   onStatusChange,
   assigneeName,
+  isRecentlyUpdated = false,
 }) => {
   const isOverdue = task.due_date && task.status !== 'completed' && new Date(task.due_date) < new Date(new Date().setHours(0, 0, 0, 0));
 
@@ -36,7 +38,13 @@ export const TaskCard: React.FC<TaskCardProps> = ({
   const nextStatus = getNextStatus(task.status);
 
   return (
-    <div className="bg-white rounded-xl p-4 border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-3 group">
+    <div
+      className={`rounded-xl p-4 border shadow-sm transition-all duration-500 flex flex-col justify-between gap-3 group ${
+        isRecentlyUpdated
+          ? 'ring-2 ring-teal-400 bg-teal-50/40 border-transparent'
+          : 'bg-white border-slate-200/90 hover:shadow-md'
+      }`}
+    >
       <div>
         {/* Cabecera de la tarjeta: Prioridad y Acciones */}
         <div className="flex items-center justify-between gap-2 mb-2">
